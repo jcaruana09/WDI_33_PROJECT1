@@ -1,0 +1,108 @@
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #ffffff;
+}
+
+/* header */
+a {
+  color: #777375;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 20px;
+  padding: 1px 12px;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 2px solid #777375;
+}
+
+h1 {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 40px;
+  margin: 5px;
+  padding: 10px;
+}
+
+header {
+  color: #777375;
+  background-color: #b4dbc0;
+  text-align: center;
+}
+
+/* nav */
+
+.nav {
+  padding: 1px 10px 10px 10px;
+}
+
+/* main/board */
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.board-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #b56357;
+  width: 70%;
+}
+
+.player_1 {
+  flex-basis: 50%;
+  padding: 20px;
+}
+
+.player_2 {
+  flex-basis: 50%;
+  padding: 20px;
+}
+
+.deck-container {
+  flex-basis: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+img {
+  background-color: #ffffff;
+  border: 1px solid black;
+  border-radius: 4px;
+  height: 80px;
+  padding: 2px;
+  width: 55px;
+}
+
+/* aside */
+aside {
+  border: 2px solid black;
+}
+
+button {
+  background-color: #a7b3a5;
+  border-radius: 7px;
+  color: #ffffff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 46px;
+  padding: 15px 18px;
+}
+
+button:hover {
+  border: 6px solid #ffffff;
+}
+
+.aside-container {
+  background-color: #a7b3a5;
+  width: 30%;
+}
+
+.card-count {
+  bottom: 170px;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 20px;
+  position: fixed;
+}
+
+/* footer */

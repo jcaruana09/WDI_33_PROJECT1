@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/deck.js" type="text/javascript"></script>
+    <script src="./js/app.js" type="text/javascript"></script>
+    <title>Karma, Threes, Palace, Shed</title>
+  </head>
+  <body>
+    <!-- 1.) header - x1 <h1> for the title of the page -->
+    <!-- 2.) nav - x3 <a> for the nav bar (Instructions, Home and New Game) -->
+    <!-- 3.) main - x1 board-container -->
+    <!-- 4.) aside - x1 chat section? -->
+    <!-- 5.) footer - CW logos and info -->
+    <header>
+      <h1>Karma, Threes, Palace, Shed</h1>
+        <nav class="nav">
+          <a href="#" class="new-game-button">New Game</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="flex-container">
+        <div class="board-container">
+          <div class="player_1">
+
+            <h3>Player 1</h3>
+            <p>Cards in hand</p>
+            <div class="p1-hand-cards">
+            </div>
+
+            <p>Cards on table</p>
+            <div class="p1-table-cards">
+            </div>
+
+            <p>Final cards</p>
+            <div class="p1-final-cards">
+            </div>
+
+          </div>
+
+          <div class="deck-container">
+            <h3>Card to beat</h3>
+            <div class="card-to-beat">
+            </div>
+            <h3>Deck</h3>
+            <div class="deck">
+            </div>
+          </div>
+
+          <div class="player_2">
+            <h3>Player 2</h3>
+
+            <p>Final cards:</p>
+            <div class="p2-final-cards">
+            </div>
+
+            <p>Cards on table:</p>
+            <div class="p2-table-cards">
+            </div>
+
+            <p>Cards in hand:</p>
+            <div class="p2-hand-cards">
+            </div>
+
+          </div>
+        </div>
+        <div class="aside-container">
+            <button class="deal-button">Deal</button>
+            <button class="draw-card">Draw Card</button>
+          <div class="card-count">
+            <h3>Card Count</h3>
+            <p>Cards left in deck:<div class="number-count"></div></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+
+    </footer>
+  </body>
+</html>
