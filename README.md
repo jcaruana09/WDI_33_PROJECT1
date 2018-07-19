@@ -48,9 +48,8 @@ The next step was to write the psudocode for the game logic, listing out each st
 
 ####Challenges / Shortfalls 
 
-I wanted to keep my code clean and easy to read by using a for loop to join multiple arrays together, which would represent the different properties of the cards. eg, one array for card suit and another for card value.
+I wanted to keep my code clean and easy to read by using a for loop to join multiple arrays together, which would represent the different properties of the cards. eg, one array for card suit and another for card value. I couldn't find a way for this to work and so had to create the deck in an array object.
 
 
 
 
-# WDI_33_PROJECT1

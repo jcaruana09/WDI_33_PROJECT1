@@ -12,13 +12,13 @@ $(() => {
   const $dealButton = $('.deal-button');
   const $newGameButton = $('.new-game-button');
   const $drawCardButton = $('.draw-card');
-  const $numberCount = $('.number-count')
+  // const $numberCount = $('.number-count');
 
 
   // Creating the deck
 
-  var cardsPlayed = [];
-  var usedCardsPile = [];
+  // var cardsPlayed = [];
+  // var usedCardsPile = [];
   var deck = [
     {
       rank: 14,
@@ -283,27 +283,6 @@ $(() => {
   ];
 
 
-  const deckSplit = {
-    handCards: [],
-    tableCards: [],
-    finalCards: [],
-    aiHandCards: [],
-    aiTableCards: [],
-    aiFinalCards: [],
-    cardToBeat: []
-  };
-
-  let handCards = 0;
-  let tableCards = 0;
-  let finalCards = 0;
-  let aiHandCards = 0;
-  let aiTableCards = 0;
-  let aiFinalCards = 0;
-  let deckPile = 0;
-  let cardToBeat = 0;
-
-
-
   $newGameButton.on('click', () => {
     location.reload();
   });
@@ -330,45 +309,56 @@ $(() => {
 
   // Deal cards when button is clicked
 
+  const deckSplit = {
+    handCards: [],
+    tableCards: [],
+    finalCards: [],
+    aiHandCards: [],
+    aiTableCards: [],
+    aiFinalCards: [],
+    deckPile: [],
+    cardToBeat: []
+  };
+
   $dealButton.on('click', () => {
     const deckLength = deck.length;
     for(var i = 0; i < deckLength ; i++){
-      if(handCards < 3){
+      if(deckSplit.length < 3){
         $('.p1-hand-cards').append(`<img src='${deck[i].cardImage}'/>`);
-        handCards++;
+        deckSplit.handCards++;
         deck.splice(i, 1);
 
-      } else if(tableCards < 3){
+      } else if(deckSplit.tableCards < 3){
 
         $('.p1-table-cards').append($(`<img src='${deck[i].cardImage}'/>`));
-        tableCards++;
+        deckSplit.tableCards++;
         deck.splice(i, 1);
 
-      } else if(finalCards < 3){
+      } else if(deckSplit.finalCards < 3){
 
         $('.p1-final-cards').append($(`<img src='images/back.png'/>`));
-        finalCards++;
+        deckSplit.finalCards++;
         deck.splice(i, 1);
 
-      } else if(aiHandCards < 3){
+      } else if(deckSplit.aiHandCards < 3){
 
         $('.p2-hand-cards').append(`<img src='${deck[i].cardImage}'/>`);
-        aiHandCards++;
+        deckSplit.aiHandCards++;
         deck.splice(i, 1);
 
-      } else if(aiTableCards < 3){
+      } else if(deckSplit.aiTableCards < 3){
         $('.p2-table-cards').append($(`<img src='${deck[i].cardImage}'/>`));
-        aiTableCards++;
+        deckSplit.aiTableCards++;
         deck.splice(i, 1);
 
-      } else if(aiFinalCards < 3){
+      } else if(deckSplit.aiFinalCards < 3){
         $('.p2-final-cards').append($(`<img src='images/back.png'/>`));
         deck.splice(i, 1);
-        aiFinalCards++;
+        deckSplit.aiFinalCards++;
 
-      } else if(cardToBeat < 1){
+      } else if(deckSplit.cardToBeat < 1){
         $('.card-to-beat').append($(`<img src='${deck[i].cardImage}'/>`));
-        cardToBeat++;
+        deckSplit.cardToBeat++;
         deck.splice(i, 1);
 
       } else {
@@ -379,8 +369,7 @@ $(() => {
   });
 
 
-  // Flip first card from the top of the deck.
-  // Figure out how to move card from deck to cardToBeat without copying. --- DONE ---
+  // Deal card button.
 
   $drawCardButton.on('click', () => {
     console.log(deckLength);
@@ -401,40 +390,4 @@ $(() => {
       alert('That card cannot be played, please pick another');
     }
   });
-
-
-  // 3.) If a player has less than 3 cards in their hand, they must be given a third card from the deck.
-
-
-
-
-
-  // 4.) 2 - resets the value of the deck and can be put on anything
-
-  // if(cardToBeat[cardToBeat.length-1] === 2 && cardToBeat[cardToBeat.length-1]){
-  //
-  // }
-
-  //     3 - next person has to pick up unless they have a 3
-  //     9 - next person has to play lower than a 9
-  //     10 - blows the deck and its the players turn again
-
-
-  //
-  // function checkIfSpecial(){
-  //   if(player1 === 2){
-  //
-  //   } else if(player1 === 3){
-  //
-  //   } else if(player1 === 9){
-  //
-  //   } else if(player1 === 10){
-  //     usedCards = cardsPlayed.splice();
-  //     usedCards = cardToBeat.splice(0, 1);
-  //   } else {
-  //
-  //   }
-  // }
-
-  // 5.)
 });
