@@ -282,7 +282,6 @@ $(() => {
     }
   ];
 
-
   $newGameButton.on('click', () => {
     location.reload();
   });
@@ -323,7 +322,7 @@ $(() => {
   $dealButton.on('click', () => {
     const deckLength = deck.length;
     for(var i = 0; i < deckLength ; i++){
-      if(deckSplit.length < 3){
+      if(deckSplit.handCards < 3){
         $('.p1-hand-cards').append(`<img src='${deck[i].cardImage}'/>`);
         deckSplit.handCards++;
         deck.splice(i, 1);
@@ -362,6 +361,7 @@ $(() => {
         deck.splice(i, 1);
 
       } else {
+        console.log(deck[i]);
         $('.deck').append(`<img src='images/back.png' data-suit='${deck[i].suit}' data-rank='${deck[i].rank}'/>`);
 
       }
@@ -372,8 +372,8 @@ $(() => {
   // Deal card button.
 
   $drawCardButton.on('click', () => {
-    console.log(deckLength);
-    $('.deck').append()
+
+    $('.deck').append();
 
   });
 
@@ -384,7 +384,7 @@ $(() => {
 
   $cardsInHand.on('click', () => {
     console.log('clicked');
-    if($cardsInHand.prop('rank') >= $('.card-to-beat').prop('rank') === true){
+    if($cardsInHand.prop('rank') >= $('.card-to-beat').prop('rank')){
       $('.p1-hand-cards').appendTo($('.card-to-beat'));
     } else {
       alert('That card cannot be played, please pick another');
